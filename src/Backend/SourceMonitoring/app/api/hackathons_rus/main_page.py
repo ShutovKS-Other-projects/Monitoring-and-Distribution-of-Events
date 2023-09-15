@@ -1,11 +1,10 @@
-from app.tools.browser import get_response
 import json
+import requests
 
-__url = "https://feeds.tildacdn.com/api/getfeed/?feeduid=617755803461&recid=488758159&c=1694767429185&size=16&slice=1&sort%5Bdate%5D=desc&filters%5Bdate%5D%5B%3C%5D=now&getparts=true"
+url = "https://feeds.tildacdn.com/api/getfeed/?feeduid=617755803461&recid=488758159&c=1694767429185&size=16&slice=1&sort%5Bdate%5D=desc&filters%5Bdate%5D%5B%3C%5D=now&getparts=true"
 
 
-def get_links_to_hackathons():
-    response = get_response(__url)
+def get_links_to_hackathons(response: requests.Response):
     urls = []
 
     result = response.text
