@@ -1,14 +1,8 @@
 import undetected_chromedriver as driver_
 import time
 from selenium.webdriver.common.by import By
+from src.Backend.SourceMonitoring.app.api.Parsing_information_data_storage import Information
 
-class Information:
-    def __init__(self, name, info, data, url, url_photo):
-        self.name = name
-        self.info = info
-        self.data = data
-        self.url = url
-        self.url_photo = url_photo
 
 def Driver(url):
     driver = driver_.Chrome(use_subprocess=False)
